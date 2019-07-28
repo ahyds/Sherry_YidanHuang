@@ -1,0 +1,41 @@
+departments as dp
+-
+dept_no PK VARCHAR(5)
+dept_name string UNIQUE
+
+dept_emp as dpemp
+-
+emp_no int FK - emp.emp_no
+dept_no VARCHAR(5) FK >- dp.dept_no
+from_date date
+to_date date
+
+dept_manager as mng
+----
+dept_no VARCHAR(5) FK - departments.dept_no
+emp_no int FK - emp.emp_no  # 1 manage is 1 employee
+from_date date
+to_date date
+
+employees as emp
+-
+emp_no PK int-dpemp.emp_no
+birth_date date
+first_name string(30)
+last_name string(30)
+gender string
+hire_date date
+
+salaries as slry
+-
+emp_no int FK - emp.emp_no
+salary money
+from_date date 
+to_date date 
+
+titles
+-
+emp_no int FK - emp.emp_no
+title string
+from_date date
+to_date date
